@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bridge Between Investor And Business People - Connect investors with entrepreneurs">
+    <title>Bridge - Investor & Business Platform</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="assets/logo bridge.png" alt="Bridge Logo" style="height:80px;vertical-align:middle;">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="./login.html" class="nav-link">Login</a>
+                <a href="./register.html" class="nav-link">Register</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>Connect Investors with Entrepreneurs</h1>
+            <p>Your platform for meaningful business connections and investment opportunities</p>
+            <div class="cta-buttons">
+                <a href="/login.html" class="btn btn-primary">I'm an Investor</a>
+                <a href="/login.html" class="btn btn-secondary">I'm an Entrepreneur</a>
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>Platform Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>For Investors</h3>
+                    <ul>
+                        <li>Browse business proposals</li>
+                        <li>Connect with entrepreneurs</li>
+                        <li>Post investment opportunities</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>For Entrepreneurs</h3>
+                    <ul>
+                        <li>Post business ideas</li>
+                        <li>Find potential investors</li>
+                        <li>Get expert advice</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>For Advisors</h3>
+                    <ul>
+                        <li>Share expertise</li>
+                        <li>Answer queries</li>
+                        <li>Build reputation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Bridge</h4>
+                <p>Connecting investors with entrepreneurs to create meaningful business relationships.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bridge Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html> 
