@@ -9,9 +9,10 @@
 .proposals-header {
     background: #fff;
     padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(37, 99, 235, 0.07), 0 1.5px 6px rgba(44, 62, 80, 0.04);
     margin-bottom: 2rem;
+    transition: box-shadow 0.3s cubic-bezier(.4,0,.2,1);
 }
 
 .header-content {
@@ -53,15 +54,16 @@
 .search-bar input {
     width: 100%;
     padding: 1rem 1rem 1rem 3rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
+    border: 1.5px solid #d1e8f7;
+    border-radius: 10px;
     font-size: 1rem;
-    transition: all 0.3s ease;
+    background: #fafdff;
+    transition: border 0.2s, box-shadow 0.2s;
 }
 
 .search-bar input:focus {
-    border-color: #3498db;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15); /* Slightly stronger focus ring */
     outline: none;
 }
 
@@ -93,17 +95,17 @@
 
 .filter-select {
     padding: 0.75rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    background-color: white;
+    border: 1.5px solid #d1e8f7;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #fafdff;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: border 0.2s, box-shadow 0.2s;
 }
 
 .filter-select:focus {
-    border-color: #3498db;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15); /* Slightly stronger focus ring */
     outline: none;
 }
 
@@ -116,16 +118,15 @@
 }
 
 .stat-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(90deg, #fafdff 60%, #e8f4fc 100%);
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(37, 99, 235, 0.06);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: box-shadow 0.2s;
 }
 
 .stat-card:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 6px 24px rgba(37, 99, 235, 0.12);
 }
 
 .stat-card i {
@@ -171,8 +172,8 @@
 }
 
 .proposal-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12), 0 2px 8px rgba(44, 62, 80, 0.08);
 }
 
 .proposal-header {
@@ -195,12 +196,20 @@
 
 .proposal-category {
     display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background: #e8f4fc;
+    padding: 0.4rem 1.2rem; /* Slightly larger padding */
+    background: linear-gradient(90deg, #e8f4fc 70%, #d1e8f7 100%);
     color: #2563eb;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
+    border-radius: 24px;
+    font-size: 1rem; /* Slightly larger font size */
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.1); /* Enhanced shadow for depth */
+    letter-spacing: 0.02em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proposal-category:hover {
+    transform: translateY(-2px); /* Subtle hover lift */
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15); /* Stronger hover shadow */
 }
 
 .proposal-body {
@@ -208,10 +217,10 @@
 }
 
 .proposal-description {
-    color: #444;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
+    color: #3a3a3a;
+    font-size: 1.1rem; /* Slightly larger font size */
+    line-height: 1.8; /* Better line spacing */
+    margin-bottom: 1.5rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -243,11 +252,18 @@
 
 .proposal-footer {
     padding: 1rem 1.5rem;
-    background: #f8f9fa;
-    border-top: 1px solid #e0e0e0;
+    background: #fafdff;
+    border-top: 2px solid #e3eaf3; /* Slightly thicker divider */
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* Divider line between proposal details */
+.proposal-footer {
+    border-top: 2px solid #e3eaf3; /* Slightly thicker divider */
+    background: #fafdff;
+    padding: 1.2rem 1.5rem; /* More padding for spacing */
 }
 
 .proposal-date {
@@ -311,34 +327,39 @@
 
 /* Button Styles */
 .btn {
-    padding: 0.75rem 1.5rem;
+    padding: 0.9rem 2.2rem; /* Slightly larger padding */
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
+    border-radius: 12px; /* More rounded corners */
+    font-size: 1.1rem; /* Larger font size */
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.08); /* Softer shadow */
+    letter-spacing: 0.03em;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
 .btn-primary {
-    background: #2563eb;
+    background: linear-gradient(90deg, #2563eb 60%, #3498db 100%);
     color: #fff;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.1);
 }
 
-.btn-primary:hover {
-    background: #2980b9;
+.btn-primary:hover, .btn-primary:focus {
+    background: linear-gradient(90deg, #174ea6 60%, #2563eb 100%);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2); /* Stronger hover shadow */
 }
 
 .btn-secondary {
     background: #e8f4fc;
     color: #2563eb;
+    border: 1.5px solid #cfe2fa;
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover, .btn-secondary:focus {
     background: #d1e8f7;
+    color: #174ea6;
+    border-color: #b6d4fa;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.1); /* Subtle hover shadow */
 }
 
 /* Responsive Design */
@@ -526,6 +547,7 @@
 /* Make the website background a light gray */
 body {
     background-color: #f3f4f8;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
 
 .proposals-container {
@@ -534,8 +556,9 @@ body {
 
 .proposals-header, .proposal-card, .modal-content {
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(37, 99, 235, 0.07), 0 1.5px 6px rgba(44, 62, 80, 0.04);
+    transition: box-shadow 0.3s cubic-bezier(.4,0,.2,1);
 }
 
 .proposal-card {
@@ -543,20 +566,190 @@ body {
 }
 
 .proposal-category {
-    background: #e8f4fc;
+    background: linear-gradient(90deg, #e8f4fc 70%, #d1e8f7 100%);
     color: #2563eb;
 }
 
 .btn-primary {
-    background: #2563eb;
+    background: linear-gradient(90deg, #2563eb 60%, #3498db 100%);
     color: #fff;
 }
 
 .btn-secondary {
     background: #e8f4fc;
     color: #2563eb;
+    border: 1.5px solid #cfe2fa;
 }
 
 label, .proposal-description, .proposal-date, .filter-group label, .filter-select {
-    color: #444;
-} 
+    color: #2c3e50;
+}
+
+/* Typography improvements */
+.header-content h1, .proposal-header h3 {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap');
+
+/* Apply font to body */
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Enhance card and modal shadows for depth */
+.proposals-header, .proposal-card, .modal-content {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(37, 99, 235, 0.07), 0 1.5px 6px rgba(44, 62, 80, 0.04);
+    transition: box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+/* Smoother hover effect for cards */
+.proposal-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12), 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+
+/* Buttons: more modern, subtle shadow, bolder font */
+.btn {
+    padding: 0.9rem 2.2rem; /* Slightly larger padding */
+    border: none;
+    border-radius: 12px; /* More rounded corners */
+    font-size: 1.1rem; /* Larger font size */
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.08); /* Softer shadow */
+    letter-spacing: 0.03em;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #2563eb 60%, #3498db 100%);
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.1);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background: linear-gradient(90deg, #174ea6 60%, #2563eb 100%);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2); /* Stronger hover shadow */
+}
+
+.btn-secondary {
+    background: #e8f4fc;
+    color: #2563eb;
+    border: 1.5px solid #cfe2fa;
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background: #d1e8f7;
+    color: #174ea6;
+    border-color: #b6d4fa;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.1); /* Subtle hover shadow */
+}
+
+/* Inputs: refined border and padding */
+.search-bar input, .filter-select {
+    border: 1.5px solid #d1e8f7;
+    border-radius: 12px; /* More rounded corners */
+    padding: 1rem 1rem 1rem 3rem;
+    font-size: 1.05rem; /* Slightly larger font size */
+    background: #fafdff;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.search-bar input:focus, .filter-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15); /* Stronger focus ring */
+    outline: none;
+}
+
+/* Proposal category: refined padding, shadow, and font size */
+.proposal-category {
+    display: inline-block;
+    padding: 0.4rem 1.2rem; /* Slightly larger padding */
+    background: linear-gradient(90deg, #e8f4fc 70%, #d1e8f7 100%);
+    color: #2563eb;
+    border-radius: 24px;
+    font-size: 1rem; /* Slightly larger font size */
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.1); /* Enhanced shadow for depth */
+    letter-spacing: 0.02em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proposal-category:hover {
+    transform: translateY(-2px); /* Subtle hover lift */
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15); /* Stronger hover shadow */
+}
+
+/* Typography improvements for headers */
+.header-content h1, .proposal-header h3 {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em; /* Slightly tighter letter spacing */
+    color: #2c3e50;
+    line-height: 1.2; /* Improved readability */
+}
+
+/* Improved label and text colors */
+label, .proposal-description, .proposal-date, .filter-group label, .filter-select {
+    color: #34495e; /* Slightly darker for better contrast */
+}
+
+/* Proposal description: improved readability */
+.proposal-description {
+    color: #3a3a3a;
+    font-size: 1.1rem; /* Slightly larger font size */
+    line-height: 1.8; /* Better line spacing */
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Enhanced proposal footer divider */
+.proposal-footer {
+    border-top: 2px solid #e3eaf3; /* Slightly thicker divider */
+    background: #fafdff;
+    padding: 1.2rem 1.5rem; /* More padding for spacing */
+}
+
+/* Stat cards: refined shadow and hover effect */
+.stat-card {
+    border-radius: 16px; /* Slightly larger border radius */
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.08); /* Softer shadow */
+    background: linear-gradient(90deg, #fafdff 60%, #e8f4fc 100%);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px); /* Subtle hover lift */
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15); /* Stronger hover shadow */
+}
+
+/* Debug Info Styling */
+.debug-info {
+    background-color: #f4f6fb;
+    border: 1px solid #d1e8f7;
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    color: #2c3e50;
+}
+
+.debug-info-content p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.debug-info-content strong {
+    color: #2563eb;
+}

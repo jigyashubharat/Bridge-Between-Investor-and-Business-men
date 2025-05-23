@@ -1,6 +1,5 @@
 // Import Firebase services
 import { auth, db } from './firebase.js';
-import { getCurrentUser } from './auth.js';
 
 // Get DOM elements
 const proposalsGrid = document.getElementById('proposals-grid');
@@ -179,12 +178,20 @@ function showAlert(message, type = 'info') {
 // Function to handle logout
 async function handleLogout() {
     try {
+        // Sign out the user using Firebase Authentication
         await auth.signOut();
+
+        // Clear any locally stored user data
         localStorage.removeItem('userType');
+
+        // Redirect the user to the homepage or login page
         window.location.href = './index.html';
     } catch (error) {
+        // Log the error to the console for debugging
         console.error('Logout error:', error);
-        showAlert('Error signing out', 'error');
+
+        // Show an alert to the user indicating the logout failed
+        showAlert('Error signing out. Please try again.', 'error');
     }
 }
 
@@ -279,4 +286,4 @@ auth.onAuthStateChanged(async (user) => {
         updateDebugInfo('Error', 'Error checking type');
         showAlert('Error checking user permissions', 'error');
     }
-}); 
+});

@@ -23,15 +23,17 @@
             </div>
             <div class="nav-links">
                 <a href="/" class="nav-link">Home</a>
-                <a href="#" onclick="logout(); return false;" class="nav-link">Logout</a>
+                <a href="/index.html" onclick="handleLogout(); return true;" class="nav-link">Logout</a>
             </div>
         </nav>
     </header>
 
     <!-- Debug info -->
-    <div id="debug-info" style="display: none; padding: 1rem; background: #f0f0f0; margin: 1rem;">
-        <p>User Status: <span id="user-status">Checking...</span></p>
-        <p>User Type: <span id="user-type">Checking...</span></p>
+    <div id="debug-info" class="debug-info" style="display: none;">
+        <div class="debug-info-content">
+            <p><strong>User Status:</strong> <span id="user-status">Checking...</span></p>
+            <p><strong>User Type:</strong> <span id="user-type">Checking...</span></p>
+        </div>
     </div>
 
     <main class="proposals-container">
@@ -134,4 +136,4 @@
 
     <script type="module" src="./scripts/proposals.js"></script>
 </body>
-</html> 
+</html>

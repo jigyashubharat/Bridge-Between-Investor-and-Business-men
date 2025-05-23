@@ -35,7 +35,7 @@ if (registerForm) {
             if (userType === 'business') {
                 window.location.href = './create-proposal.html';
             } else {
-                window.location.href = './dashboard.html';
+                window.location.href = './proposals.html';
             }
 
         } catch (error) {
